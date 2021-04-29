@@ -176,6 +176,33 @@ body {
 .contacts-nav-item {
   margin-right: 50px;
 }
+.contacts-nav-item::before {
+  display: inline-block;
+  margin-right: 10px;
+  content: "";
+  width: 16px;
+  height: 12px;
+  background-size: contain;
+  cursor: pointer;
+  /* background-repeat: no-repeat;
+  background-position: center; */
+  /* background-color: red; */
+  fill: #757575;
+  /* outline: red; */
+}
+.icon-mail::before {
+  background-image: url("../img/icons.svg#icon-envelope");
+}
+.icon-tel::before {
+  background-image: url("../img/icons.svg#icon-smartphone");
+}
+.icon-mail::before:hover,
+.icon-mail::before:focus,
+.icon-tel::before:hover,
+.icon-tel::before:focus {
+  fill: var(--accent-text-color);
+}
+
 /* ======end of HEADER CONTACTS-NAV======= */
 /* =========end of HEADER=========== */
 
@@ -300,6 +327,52 @@ body {
   text-align: center;
 }
 /* =============end of OUR TEAM==================== */
+/* =============OUR CLIENTS==================== */
+.our-clients-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  margin-top: -30px;
+  margin-left: -30px;
+}
+.our-clients-list-item {
+  flex-basis: calc((100% - 6 * 30px) / 6);
+  border: 1px solid #afb1b8;
+  min-height: 90px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+/* .our-clients-list-item::before {
+  display: block;
+  content: "";
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+/* .icon-logo1::before {
+  background-image: url("../img/icons.svg#icon-logo1");
+}
+.icon-logo2::before {
+  background-image: url("../img/icons.svg#icon-logo2");
+}
+.icon-logo3::before {
+  background-image: url("../img/icons.svg#icon-logo3");
+}
+.icon-logo4::before {
+  background-image: url("../img/icons.svg#icon-logo4");
+}
+.icon-logo5::before {
+  background-image: url("../img/icons.svg#icon-logo5");
+}
+.icon-logo6::before {
+  background-image: url("../img/icons.svg#icon-logo6");
+} */
+
+/* =============end of OUR CLIENTS==================== */
 
 /* =============FOOTER==================== */
 .footer {
