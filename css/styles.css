@@ -1,21 +1,17 @@
 :root {
   --primary-text-color: #212121;
   --secondary-text-color: #757575;
-  --accent-text-color: #2196f3;
+  --accent-color: #2196f3;
   --white-color: #ffffff;
-  --primary-font-family: Roboto, sans-serif;
+  --primary-font-family: "Roboto", sans-serif;
   --primary-font-style: normal;
-  --primary-bg-color: #ffffff;
   --secondary-bg-color: #f5f4fa;
+  --basic-icon-color: #afb1b8;
 }
 
 /* Roboto 400, 500, 700, 900, Raleway 700
 font-family: "Raleway", sans-serif;
-font-family: "Roboto", sans-serif; */
-
-/* order-button bg color:  #2196f3;
-header bg color: #ececec;
-hero bg color: #2f303a;*/
+font-family: "Roboto", sans-serif;*/
 
 /* main css */
 h1,
@@ -23,7 +19,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin: 0;
 }
 
@@ -59,7 +56,7 @@ body {
   cursor: pointer;
   min-width: 200px;
   min-height: 50px;
-  background-color: #2196f3;
+  background-color: var(--accent-color);
   color: #ffffff;
   text-align: center;
   border: none;
@@ -79,7 +76,7 @@ body {
 .header-logo,
 .accent-logo,
 .footer-logo {
-  font-family: Raleway, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
@@ -97,7 +94,7 @@ body {
   margin-bottom: 33px;
 }
 .accent-logo {
-  color: var(--accent-text-color);
+  color: var(--accent-color);
 }
 /* ========end of LOGO=========== */
 
@@ -117,9 +114,9 @@ body {
 /* =========HEADER=========== */
 
 .header {
-  background-color: #ececec;
+  background-color: var(--white-color);
   margin: 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #ececec;
 }
 .header .container {
   display: flex;
@@ -140,7 +137,6 @@ body {
 .site-nav-list-item {
   padding-top: 32px;
   padding-bottom: 32px;
-  margin-right: 50px;
 }
 .site-nav-list-link {
   color: var(--primary-text-color);
@@ -149,20 +145,25 @@ body {
   line-height: 1.1;
   letter-spacing: 0.02em;
 }
+.site-nav-list-item:not(:last-child) {
+  margin-right: 50px;
+}
 .site-nav-list-link:hover,
 .site-nav-list-link:focus {
-  color: var(--accent-text-color);
+  color: var(--accent-color);
 }
 .site-nav-list-link.current {
-  color: var(--accent-text-color);
+  color: var(--accent-color);
 }
 .site-nav-list-link.current:active {
-  color: var(--accent-text-color);
+  color: var(--accent-color);
 }
 /* ======end of HEADER-NAVIGATION======= */
 
 /* ======HEADER CONTACTS-NAV======= */
 .contacts-nav-link {
+  display: inline-block;
+  align-items: center;
   color: var(--secondary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -171,36 +172,38 @@ body {
 }
 .contacts-nav-link:hover,
 .contacts-nav-link:focus {
-  color: var(--accent-text-color);
+  color: var(--accent-color);
 }
-.contacts-nav-item {
+.contacts-nav-link:hover .icon-envelope,
+.contacts-nav-link:focus .icon-envelope {
+  fill: var(--accent-color);
+}
+.contacts-nav-link:hover .icon-smartphone,
+.contacts-nav-link:focus .icon-smartphone {
+  fill: var(--accent-color);
+}
+.contacts-nav-item:not(:last-child) {
   margin-right: 50px;
 }
-.contacts-nav-item::before {
+.icon-envelope {
   display: inline-block;
-  margin-right: 10px;
-  content: "";
   width: 16px;
   height: 12px;
-  background-size: contain;
-  cursor: pointer;
-  /* background-repeat: no-repeat;
-  background-position: center; */
-  /* background-color: red; */
-  fill: #757575;
-  /* outline: red; */
+  fill: var(--basic-icon-color);
+  margin-right: 10px;
 }
-.icon-mail::before {
-  background-image: url("../img/icons.svg#icon-envelope");
+.contacts-nav-link {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
 }
-.icon-tel::before {
-  background-image: url("../img/icons.svg#icon-smartphone");
-}
-.icon-mail::before:hover,
-.icon-mail::before:focus,
-.icon-tel::before:hover,
-.icon-tel::before:focus {
-  fill: var(--accent-text-color);
+.icon-smartphone {
+  display: inline-block;
+  width: 16px;
+  height: 12px;
+  fill: var(--basic-icon-color);
+  margin-right: 10px;
 }
 
 /* ======end of HEADER CONTACTS-NAV======= */
@@ -214,7 +217,19 @@ body {
 }
 .hero {
   background-color: #2f303a;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../img/hero1600bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1600px;
+  background-origin: padding-box;
+  margin: 0 auto;
 }
+
 .hero .container {
   padding-top: 200px;
   padding-bottom: 200px;
@@ -230,9 +245,10 @@ body {
 }
 
 /* =============FEATURES==================== */
+
 .feature-section,
 .about-section {
-  background-color: E5E5E5;
+  background-color: var(--white-color);
 }
 .feature-list {
   display: flex;
@@ -271,7 +287,25 @@ body {
 .feature-section .feature-description {
   margin: 0;
 }
-
+.feature-list-item {
+  display: flex;
+  flex-direction: column;
+}
+.feature-item-logo {
+  display: block;
+  width: 70px;
+  height: 70px;
+}
+.feature-card-wrapper-top {
+  display: flex;
+  width: 270px;
+  height: 120px;
+  background-color: var(--secondary-bg-color);
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 100px;
+}
 /* =============end of FEATURES==================== */
 /* =============ABOUT==================== */
 .about-list {
@@ -284,6 +318,9 @@ body {
   flex-basis: calc((100% - 3 * 30px) / 3);
   margin-top: 30px;
   margin-left: 30px;
+}
+.feature-section {
+  padding-bottom: 0;
 }
 /* =============end of ABOUT==================== */
 /* =============OUR TEAM==================== */
@@ -299,8 +336,9 @@ body {
   letter-spacing: 0.03em;
 }
 .team-role {
+  display: inline-block;
   font-size: 16px;
-  margin: 0;
+  margin: 0 0 16px 0;
 }
 .team-member-name {
   font-weight: 500;
@@ -320,57 +358,116 @@ body {
   margin-top: 30px;
   margin-left: 30px;
 }
-/* .our-team-member-photo {как кропнуть фото правильно, чтобы портрет был крупнее???;} */
 .member-card-text {
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
+  background-color: var(--white-color);
+}
+.social-links-list-item {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-links-list-item:not(:last-child) {
+  margin-right: 10px;
+}
+.social-links-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: var(--basic-icon-color);
+}
+.social-links-list-item:hover,
+.social-links-list-item:focus {
+  background-color: var(--accent-color);
+  border: 1px solid transparent;
+}
+.social-links-list-item:hover .social-links-icon,
+.social-links-list-item:focus .social-links-icon {
+  fill: var(--white-color);
+}
+
+.social-links-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.our-team-list-item {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 /* =============end of OUR TEAM==================== */
 /* =============OUR CLIENTS==================== */
+.icon-logo {
+  fill: var(--basic-icon-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+.icon-logo:hover,
+.icon-logo:focus {
+  fill: var(--accent-color);
+}
+.our-clients-list-item:hover,
+.our-clients-list-item:focus {
+  border-color: var(--accent-color);
+}
+.icon-logo-1 {
+  display: block;
+  width: 45px;
+  height: 50px;
+}
+.icon-logo-2 {
+  display: block;
+  width: 40px;
+  height: 52px;
+}
+.icon-logo-3 {
+  display: block;
+  width: 42px;
+  height: 43px;
+}
+.icon-logo-4 {
+  display: block;
+  width: 80px;
+  height: 43px;
+}
+/* 4-му лого не применяется его правильный размер, он слишком мал */
+.icon-logo-5 {
+  display: block;
+  width: 59px;
+  height: 47px;
+}
+.icon-logo-6 {
+  display: block;
+  width: 89px;
+  height: 46px;
+}
+
 .our-clients-list {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: -30px;
   margin-left: -30px;
 }
 .our-clients-list-item {
   flex-basis: calc((100% - 6 * 30px) / 6);
-  border: 1px solid #afb1b8;
+  border: 1px solid var(--basic-icon-color);
+  border-radius: 4px;
   min-height: 90px;
   margin-top: 30px;
   margin-left: 30px;
+  box-sizing: border-box;
 }
-
-/* .our-clients-list-item::before {
-  display: block;
-  content: "";
-  height: 50px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-} */
-/* .icon-logo1::before {
-  background-image: url("../img/icons.svg#icon-logo1");
-}
-.icon-logo2::before {
-  background-image: url("../img/icons.svg#icon-logo2");
-}
-.icon-logo3::before {
-  background-image: url("../img/icons.svg#icon-logo3");
-}
-.icon-logo4::before {
-  background-image: url("../img/icons.svg#icon-logo4");
-}
-.icon-logo5::before {
-  background-image: url("../img/icons.svg#icon-logo5");
-}
-.icon-logo6::before {
-  background-image: url("../img/icons.svg#icon-logo6");
-} */
 
 /* =============end of OUR CLIENTS==================== */
 
@@ -394,6 +491,7 @@ body {
   margin-bottom: 8px;
 }
 .footer-links-link {
+  font-style: normal;
   color: var(--secondary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -404,7 +502,38 @@ body {
 .footer-address:focus,
 .footer-links-link:hover,
 .footer-links-link:focus {
-  color: var(--accent-text-color);
+  color: var(--accent-color);
+}
+/* .footer-address:visited,
+.footer-links-link:visited {
+  color: var(--white-color);
+} */
+/* !!!!!!! - после открытия вебсайта в отдельном tab цвет остается accent, не белым. Что добавить? 
+Когда добавляю :visited, пропадает hover&focus*/
+
+.join-us-slogan {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
+  margin-left: 70px;
+  margin-bottom: 20px;
+  margin-top: 12px;
+}
+.footer-wrapper {
+  display: flex;
+}
+.join-us .social-links-list {
+  margin-left: 70px;
+}
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  vertical-align: top;
 }
 /* ============END OF FOOTER=========== */
 /* ==========END of MAIN PAGE sections============== */
@@ -412,7 +541,7 @@ body {
 /* ===========PORTFOLIO page============== */
 
 .portfolio-page {
-  background-color: #e5e5e5;
+  background-color: var(--white-color);
   margin: 0;
 }
 .portfolio-title {
@@ -427,7 +556,6 @@ body {
 .radiobuttons-list-item {
   display: inline-block;
   padding: 0;
-  margin-top: 94px;
   margin-bottom: 50px;
 }
 .radiobuttons-list-item:not(:last-child) {
@@ -437,7 +565,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.6;
-  letter-spacing: 0.03;
+  letter-spacing: 0.03em;
   color: var(--primary-text-color);
   background-color: var(--secondary-bg-color);
   border: none;
@@ -448,7 +576,7 @@ body {
 .portfolio-button:hover,
 .portfolio-button:focus {
   color: var(--white-color);
-  background-color: #2196f3;
+  background-color: var(--accent-color);
 }
 /*========end of PORTFOLIO-BUTTONS==========  */
 /*========PORTFOLIO-PROJECTS==========  */
@@ -462,9 +590,14 @@ body {
 .portfolio-projects-list-item {
   margin-left: 30px;
   margin-top: 30px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-bottom: 1px solid #eeeeee;
 }
+
+.portfolio-projects-list-item:hover,
+.portfolio-projects-list-item:focus {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
 .portfolio-project-card-text {
   padding: 20px 24px;
   background-color: var(--white-color);
@@ -482,6 +615,7 @@ body {
   line-height: 1.9;
   color: var(--secondary-text-color);
   letter-spacing: 0.03em;
+  margin-bottom: 4px;
 }
 
 /* ===========END of PORTFOLIO page============== */
