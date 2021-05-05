@@ -40,6 +40,7 @@ img {
 
 .link {
   text-decoration: none;
+  cursor: pointer;
 }
 
 body {
@@ -287,10 +288,6 @@ body {
 .feature-section .feature-description {
   margin: 0;
 }
-.feature-list-item {
-  display: flex;
-  flex-direction: column;
-}
 .feature-item-logo {
   display: block;
   width: 70px;
@@ -298,13 +295,12 @@ body {
 }
 .feature-card-wrapper-top {
   display: flex;
-  width: 270px;
+  width: 100%;
   height: 120px;
   background-color: var(--secondary-bg-color);
   margin-bottom: 30px;
   align-items: center;
   justify-content: center;
-  padding: 25px 100px;
 }
 /* =============end of FEATURES==================== */
 /* =============ABOUT==================== */
@@ -373,6 +369,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .social-links-list-item:not(:last-child) {
   margin-right: 10px;
@@ -394,9 +391,7 @@ body {
 }
 
 .social-links-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex;
 }
 .our-team-list-item {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
